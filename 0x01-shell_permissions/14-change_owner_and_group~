@@ -1,2 +1,0 @@
-#!/bin/bash
-chown betty me && chgrop holberton me
