@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -gid -la
+ls -gid -l -a
