@@ -1,2 +1,2 @@
 #!/bin/bash
-chown +111 */
+chown +111 /*
