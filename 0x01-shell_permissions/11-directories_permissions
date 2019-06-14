@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -R -u+x -u+X .
+chown +111 */
