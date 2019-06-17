@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Holberton School">"\\*\\\'\"Holberton School\"\\'\\\*$\\?\\*\\*\\*\\*\\*:)" | ls -l && cat "\\*\\\'\"Holberton School\"\\'\\\*$\\?\\*\\*\\*\\*\\*:)" -e
+echo "Holberton School">"\\*\\\'\"Holberton School\"\\'\\\*$\\?\\*\\*\\*\\*\\*:)" 
