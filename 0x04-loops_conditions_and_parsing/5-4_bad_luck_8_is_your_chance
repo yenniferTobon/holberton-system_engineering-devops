@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+iterator=1
+
+while [ $iterator -le 10 ]; do
+    if [ $iterator -eq 4 ]; then
+        echo "bad luck"
+    elif [ $iterator -eq 8 ]; then
+        echo "good luck"
+    else
+        echo "Holberton School"
+    fi
+    iterator=$(( iterator+1 )) 
+done
