@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying number/string using while loop with conditions
 
-iterator=0
+iterator=1
 
 while [ "$iterator" -le "20" ]; do
     echo "$iterator"
