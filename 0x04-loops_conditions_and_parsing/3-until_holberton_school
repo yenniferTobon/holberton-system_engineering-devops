@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+iterator=10
+
+until [ $iterator -lt 1 ]; do
+    echo "Holberton School"
+    iterator=$(( iterator-1 )) 
+done
