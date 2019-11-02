@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+iterator=0
+
+while [ $iterator -le 10 ]; do
+    if [ $iterator -eq 9 ]; then
+        echo "Hi"
+    else
+        echo "Holberton School"
+    fi
+    iterator=$(( iterator+1 )) 
+done
