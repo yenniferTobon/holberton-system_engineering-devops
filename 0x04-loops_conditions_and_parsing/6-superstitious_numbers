@@ -3,7 +3,7 @@
 
 iterator=0
 
-while [ $iterator -le 20 ]; do
+while [ "$iterator" -le "20" ]; do
     echo "$iterator"
     case $iterator in 
 	4) echo "bad luck from China";;
