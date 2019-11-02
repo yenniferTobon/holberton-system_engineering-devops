@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying number/string using while loop with conditions
 
 iterator=0
 
