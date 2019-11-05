@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# I am invincible!!! when receiving a SIGTERM signal
+iterador=true
+trap "echo I am invincible!!!" SIGTERM
+signal=1
+
+while [ $iterador ]; do
+	echo "To infinity and beyond"
+	if [ $signal -eq 15 ]; then
+		echo "#$signal"
+	fi
+	sleep 2  
+done
+
