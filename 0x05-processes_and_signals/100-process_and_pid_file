@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Deletes the file /var/run/holbertonscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
+pgrep -f "100-process_and_pid_file">/var/run/holbertonscript.pid
+
+iterador=true
+
+while [ $iterador ]; do
+	echo "To infinity and beyond"
+	trap "echo I hate the kill command; rm /var/run/holbertonscript.pid; exit" SIGTERM
+	trap "echo Y U no love me?!" SIGINT
+done
