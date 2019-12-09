@@ -1,4 +1,6 @@
-file { /createFile:
+# Using Puppet, create a file in /tmp
+
+file { "/createFile":
 	path => "/tmp/holberton",
 	mode => "0744",
 	owner => "www-data",
