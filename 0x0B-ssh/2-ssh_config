@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#can connect to a server without typing a password
+SendEnv LANG LC_*
+HashKnownHosts yes
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials no
+PasswordAuthentication no
+IdentityFile ~/.ssh/holberton
