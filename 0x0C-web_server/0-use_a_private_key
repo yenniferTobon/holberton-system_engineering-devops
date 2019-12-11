@@ -1,2 +1,0 @@
-#Bash script that uses ssh to connect to your server using the private key
-ssh -i ~/.ssh/holberton ubuntu@35.190.170.82
