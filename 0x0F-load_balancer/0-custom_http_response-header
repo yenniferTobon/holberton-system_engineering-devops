@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#configure web-02 to be identical to web-01
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+sudo sed -i "26i add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
+service nginx restart
