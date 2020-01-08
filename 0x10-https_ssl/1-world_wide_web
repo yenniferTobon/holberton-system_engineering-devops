@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Configure your domain zone so that the subdomain www points to your load-balancer IP (lb-01)
 function parameter0() {
     dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print "The subdomain www is a " $4 " record and points to " $5}' | tail -1
@@ -10,7 +10,6 @@ function parameter0() {
 function parameter1(){
     dig "$aux" | grep -A1 'ANSWER SECTION:' | awk -v var=$aux2 '{print "The subdomain " var " is a " $4 " record and points to " $5}' | tail -1
 }
-
 
 if [[ $# -lt 2 ]];
 then
