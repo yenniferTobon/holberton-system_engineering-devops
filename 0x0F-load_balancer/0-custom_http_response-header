@@ -4,6 +4,6 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sed -i '62i add_header X-Served-By 899-web-02' /etc/nginx/nginx.conf
+sed -i '62i add_header X-Served-By 899-web-02;' /etc/nginx/nginx.conf
 service nginx restart
 
