@@ -1,0 +1,5 @@
+sed -i '19i *nat' /etc/ufw/before.rules
+sed -i '20i:PREROUTING ACCEPT [0:0'] /etc/ufw/before.rules
+sed -i '21i -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80' /etc/ufw/before.rules
+sed -i '22i commit' /etc/ufw/before.rules
+
