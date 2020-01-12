@@ -2,7 +2,7 @@
 #configure web-02 to be identical to web-01
 apt-get update
 apt-get -y install nginx
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sed -i '63i add_header X-Served-By $hostname;' /etc/nginx/nginx.conf
+ufw allow 'Nginx HTTP'
+sed -i "63i add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
 service nginx restart
 
