@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Run nginx under nginx user 
-sudo adduser nginx
-chown nginx:nginx /etc/nginx/nginx.conf
-chmod 700 /etc/nginx/nginx.conf
-sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
-sudo -u nginx service nginx start
+# Bash script to make web server run as nginx instead of root
+sed -i "s/80 default_server/8080 default_server/" /etc/nginx/sites-available/default
+sed -i "s/8080/80/" /etc/apache2/ports.conf
+pkill apache2
+service apache2 restart
+service apache2 stop
+chmod +r /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
