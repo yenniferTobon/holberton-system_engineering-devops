@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Run nginx under nginx user
-
+# Run Nginx as Nginx
+sed -i "s/8080/80/g" /etc/apache2/ports.conf
 pkill -f apache2
-chmod +r /etc/nginx/nginx.conf
 chown nginx:nginx /etc/nginx/nginx.conf
-sed -i "s/80 default_server/8080 default_server/" /etc/nginx/sites-available/default
+chmod 700 /etc/nginx/nginx.conf
+sed -i "s/80 default_server/8080 default_server/g" /etc/nginx/sites-available/default
 sudo -u nginx service nginx start
