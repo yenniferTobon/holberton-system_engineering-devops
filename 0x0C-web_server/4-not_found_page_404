@@ -1,24 +1,8 @@
 #!/usr/bin/env bash
 #Nginx server so that /redirect_me is redirecting to another page
-#apt-get -y update
-#apt-get -y install nginx
-#ufw allow 'Nginx HTTP'
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-printf %s "server {
-        listen 80;
-        listen [::]:80 default_server;
-        root   /var/www/html;
-        index  index.html index.htm index.nginx-debian.html;
-        location /redirect_me {
-                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4/;
-        }
-        error_page 404 /404.html;
-        location /404{
-                root /var/www/html;
-                internal;
-        }
-}" > /etc/nginx/sites-available/default
-
+./3-redirection
+echo "Ceci n'est pas une page" > /var/www/myApp/html/404.html
+sed -i "49i\ \n\terror_page 404 /404.html;\n\tlocation /404{\n\t\troot /var/www/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/myAppConf
 service nginx restart
+
 
