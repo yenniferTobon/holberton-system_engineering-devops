@@ -2,7 +2,6 @@
 #Nginx server so that /redirect_me is redirecting to another page
 ./3-redirection
 echo "Ceci n'est pas une page" > /var/www/myApp/html/404.html
-sed -i "49i\ \n\terror_page 404 /404.html;\n\tlocation /404{\n\t\troot /var/www/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/myAppConf
+sed -i "49i\ \n\terror_page 404 /404.html;\n\tlocation /404{\n\t\troot /var/www/myApp/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/myAppConf
 service nginx restart
-
 
