@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #Install nginx web server
-./1-install_nginx_web_server
-sed -i "43s%location / {%location /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;%g" /etc/nginx/sites-available/myAppConf
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.html
+sed -i "43s%location / {%location /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;%g" /etc/nginx/sites-available/default
 service nginx restart
 
