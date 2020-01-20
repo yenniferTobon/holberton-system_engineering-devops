@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 #Nginx server so that /redirect_me is redirecting to another page
-./3-redirection
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/myAppConf
+mkdir /var/www/myApp
+mkdir /var/www/myApp/html
+sed -i "s%/var/www/html%/var/www/myApp/html%g" /etc/nginx/sites-available/myAppConf
+sed -i "s/default_server//g" /etc/nginx/sites-available/default
+ln -s /etc/nginx/sites-available/myAppConf /etc/nginx/sites-enabled/
+echo "Holberton School" > /var/www/myApp/html/index.html
+sed -i "43s%location / {%location /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;%g" /etc/nginx/sites-available/myAppConf
 echo -e "Ceci n'est pas une page\n" > /var/www/myApp/html/404.html
 sed -i "49i\ \n\terror_page 404 /404.html;\n\tlocation /404{\n\t\troot /var/www/myApp/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/myAppConf
 service nginx restart
-
