@@ -7,7 +7,8 @@ cp /etc/nginx/sites-available/default /etc/nginx/sites-available/myAppConf
 mkdir /var/www/myApp
 mkdir /var/www/myApp/html
 sed -i "s%/var/www/html%/var/www/myApp/html%g" /etc/nginx/sites-available/myAppConf
-sed -i "s/default_server//g" /etc/nginx/sites-available/myAppConf
+sed -i "s/default_server//g" /etc/nginx/sites-available/default
 ln -s /etc/nginx/sites-available/myAppConf /etc/nginx/sites-enabled/
 echo "Holberton School" > /var/www/myApp/html/index.html
 service nginx restart
+
