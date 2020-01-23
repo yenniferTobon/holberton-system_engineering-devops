@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#must say that nginx is not running 
+pkill -o ngnix
