@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#backup we can compress it con gzip
+date2=$(date +"%d-%m-%y")
+mysqldump --user=root --password="$1" --all-databases > backup.sql
+tar -cvzf "$date2".tar.gz backup.sql
