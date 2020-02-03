@@ -13,7 +13,7 @@ if __name__ == "__main__":
     responseTaskDone = requests.get(url + "todos?userId={}&&completed=true".
                                     format(argv[1])).json()
 
-    print('Employee {} is done with tasks({}/{}):'.
+    print("Employee {} is done with tasks({}/{})".
           format(responseUser['name'], len(responseTaskDone), responseTask))
 
     for element in responseTaskDone:
