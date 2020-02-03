@@ -14,7 +14,7 @@ if __name__ == "__main__":
                                     format(argv[1])).json()
 
     print("Employee {} is done with tasks({}/{}):".
-          format(responseUser['name'], len(responseTaskDone), responseTask))
+          format(responseUser.get('name'), len(responseTaskDone), responseTask))
 
     for element in responseTaskDone:
         print("\t", element['title'])
