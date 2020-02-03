@@ -17,4 +17,4 @@ if __name__ == "__main__":
           format(responseUser, len(responseTaskDone), responseTask))
 
     for element in responseTaskDone:
-        print("     ", element['title'])
+        print("\t ", element.get('title'))
