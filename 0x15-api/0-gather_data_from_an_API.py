@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ requests to an api with REST API"""
 
-import requests
 from sys import argv
+import requests
 
 
 if __name__ == "__main__":
@@ -14,7 +14,7 @@ if __name__ == "__main__":
                                     format(argv[1])).json()
 
     print("Employee {} is done with tasks({}/{}):".
-          format(responseUser.get('name'), len(responseTaskDone), responseTask))
+          format(responseUser['name'], len(responseTaskDone), responseTask))
 
     for element in responseTaskDone:
         print("\t", element['title'])
