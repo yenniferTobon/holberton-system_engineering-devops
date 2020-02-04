@@ -15,7 +15,7 @@ if __name__ == "__main__":
     nameFile = argv[1] + ".csv"
     myFile = open(nameFile, 'w')
     with myFile:
-        writer = csv.writer(myFile, quoting=csv.QUOTE_ALL)
+        obj = csv.writer(myFile, quoting=csv.QUOTE_ALL)
         for element in responseTask:
-            writer.writerow([responseUser['id'], responseUser['username'],
+            obj.writerow([responseUser['id'], responseUser['username'],
                             element['completed'], element['title']])
