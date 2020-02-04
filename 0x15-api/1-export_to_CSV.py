@@ -18,4 +18,4 @@ if __name__ == "__main__":
         obj = csv.writer(myFile, quoting=csv.QUOTE_ALL)
         for element in responseTask:
             obj.writerow([responseUser['id'], responseUser['username'],
-                            element['completed'], element['title']])
+                         element['completed'], element['title']])
