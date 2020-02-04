@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ requests to an api with REST API"""
 
-from sys import argv
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
