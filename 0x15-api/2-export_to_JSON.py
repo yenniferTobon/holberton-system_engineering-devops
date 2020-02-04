@@ -20,7 +20,7 @@ if __name__ == "__main__":
                          'completed': element['completed'],
                          'username': responseUser['username']})
 
-    output = {"2": listTask}
+    output = {argv[1]: listTask}
 
     nameFile = argv[1] + ".json"
     myFile = open(nameFile, 'w')
