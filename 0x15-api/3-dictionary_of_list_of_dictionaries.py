@@ -18,11 +18,13 @@ if __name__ == "__main__":
 
     for User in responseUser:
         listTask = []
+        id = User.get('id')
         for element in responseTask:
-            listTask.append({'task': element['title'],
-                             'completed': element['completed'],
-                             'username': User['username']})
-        output[User['id']] = listTask
+            if id == element['userId']:
+                listTask.append({'task': element['title'],
+                                 'completed': element['completed'],
+                                 'username': User['username']})
+        output[str(id)] = listTask
 
     myFile = open("todo_all_employees.json", 'w')
     with myFile:
