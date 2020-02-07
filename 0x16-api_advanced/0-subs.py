@@ -7,15 +7,15 @@ import json
 def number_of_subscribers(subreddit):
     """returns the number of subscribers"""
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+
+    headers = {
+        'User-Agent': 'My User Agent 1.0'
+    }
+    
     response = requests.get(url)
     l = response.json()
 
     try:
-        for key, value in l.items():
-            if key == "data":
-                print("yenn")
-                for i, j in value.items():
-                    if i == 'subscribers':
-                        return (j)
+        return (l.get('data').get('subscribers'))
     except:
         return(0)
