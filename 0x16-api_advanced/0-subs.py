@@ -7,12 +7,13 @@ import json
 def number_of_subscribers(subreddit):
     """returns the number of subscribers"""
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    response = requests.get(url)
-    l = response.json()
 
     headers = {
         'User-Agent': 'My User Agent 1.0'
     }
+
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    l = response.json()
 
     if response.status_code == 200:
         for key, value in l.items():
