@@ -12,7 +12,7 @@ def top_ten(subreddit):
     l = response.json()
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit'
+        'User-Agent': "My User Agent 1.0"
     }
 
     if response.status_code == 200:
