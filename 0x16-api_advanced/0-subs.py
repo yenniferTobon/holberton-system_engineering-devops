@@ -10,6 +10,10 @@ def number_of_subscribers(subreddit):
     response = requests.get(url)
     l = response.json()
 
+    headers = {
+            'User-Agent': 'yenniferTobon'
+            }
+
     if response.status_code == 200:
         for key, value in l.items():
             if key == "data":
