@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
     l = response.json()
 
     headers = {
-            'User-Agent': 'yenniferTobon'
+            'User-Agent': 'My User Agent 1.0'
             }
 
     if response.status_code == 200:
